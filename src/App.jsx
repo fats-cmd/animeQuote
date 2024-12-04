@@ -10,10 +10,11 @@ import AboutPage from './pages/AboutPage';
 const App = () => {
   return (
     <>
+    {/* <Layout /> */}
       <BrowserRouter>
         <ScrollProvider>
           <Routes>
-              <Route path='/' element={<HomePage />} /> {/* HomePage rendered as a child */}
+              <Route path='/' element={<HomePage />} /> 
               <Route path="/search" element={<SearchResult />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path='*' element={<NotFound />}/>

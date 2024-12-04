@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import luffy from '../assets/images/content/tinified/luffy-not-found.png'
 import { useLocation } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
 
@@ -18,6 +19,13 @@ const SearchResult = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true); // State to track loading
   const quotesPerPage = 12; // Number of quotes per page
+  const [image, setImage] = useState(false)
+  //IMAGE LOGIC
+  const handleImageIfResultDoesntExist =  () =>{
+    if(searchTerm.trim === "")  {
+      setImage(true)
+    }
+   }
 
   const location = useLocation();
 
@@ -103,8 +111,9 @@ const SearchResult = () => {
               </span>
             ))
           ) : (
-            <div className="text-white flex justify-center items-center w-full col-span-full">
+            <div className="text-white flex flex-col justify-center items-center w-full col-span-full">
               <p>No results found for "{query}".</p>
+              <img src={luffy} alt="" className="" />
             </div>
           )}
         </div>

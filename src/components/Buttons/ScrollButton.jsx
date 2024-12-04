@@ -13,7 +13,7 @@ const ScrollButton = () => {
         animate={{ y: [0, 10, -10, 0], opacity: [1, 0.5, 1, 1] }}
         transition={{ duration: 1.5, repeat: Infinity }}
       >
-        <ArrowDownward className="w-9 h-9" />
+        <ArrowDownward className="w-20 h-20" />
       </motion.button>
     </>
   );

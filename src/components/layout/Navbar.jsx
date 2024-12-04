@@ -39,7 +39,7 @@ const Navbar = () => {
   }
   return (
     <>
-      <header className={` w-full z-20 font-default flex items-center h-20 ${isScrolled ? 'bg-gray-800' : 'bg-transparent'} ${isScrolled ? 'fixed': 'relative'}  `}>
+      <header className= {` w-full z-20 font-default flex items-center h-20 ${isScrolled ? 'bg-gray-900' : 'bg-transparent'} ${isScrolled ? 'fixed': 'relative'}  `}>
         <nav className=" container max-w-7xl mx-auto px-4 flex items-center justify-between">
           <Logo />
           <div className="relative">
@@ -56,14 +56,12 @@ const Navbar = () => {
                 onChange={handleSearchChange}
                 onKeyDown={handleKeyPress}
                 type="text"
-                className="w-[24em] px-8 bg-gray-100 py-3 rounded-full outline-none placeholder:text-gray-400 overflow-hidden placeholder:text-lg"
-                placeholder="Search..."
+                className="w-[16em] px-8 bg-gray-100 py-3 rounded-full outline-none placeholder:text-gray-400 overflow-hidden placeholder:text-lg"
+                placeholder="Search quotes"
               />
-              <span onClick={handleSearch} className="absolute bottom-[16px] left-2 cursor-pointer">
+              <span onClick={handleSearch} className="absolute bottom-[12px] left-1 cursor-pointer">
                 {/* Search icon */}
-                <svg className=' fill-gray-300' width="17" height="17" viewBox="0 0 18 18" fill="" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12.5 11H11.71L11.43 10.73C12.41 9.59 13 8.11 13 6.5C13 2.91 10.09 0 6.5 0C2.91 0 0 2.91 0 6.5C0 10.09 2.91 13 6.5 13C8.11 13 9.59 12.41 10.73 11.43L11 11.71V12.5L16 17.49L17.49 16L12.5 11ZM6.5 11C4.01 11 2 8.99 2 6.5C2 4.01 4.01 2 6.5 2C8.99 2 11 4.01 11 6.5C11 8.99 8.99 11 6.5 11Z" fill="#323232" />
-                </svg>
+                <SearchSharp className=' text-gray-400 ' />
               </span>
             </div>
             {/* Navigation links */}
@@ -81,7 +79,7 @@ const Navbar = () => {
             </nav>
             <Link
               to='/subscribe'
-              className="px-6 py-2 rounded-full text-white/80 border hover:text-white border-white/80 transition-all duration-500 hover:bg-blue-500"
+              className="px-6 py-2 rounded-full font-bold text-white transition-all duration-500 hover:scale-105 bg-blue-600"
             >
               Subscribe
             </Link>

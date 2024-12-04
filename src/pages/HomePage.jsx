@@ -15,11 +15,11 @@ const HomePage = ({head = 'Find your Favourite Quotes in Real Time', text = 'Get
   const [backgroundIndex, setBackgroundIndex] = useState(0);
 
   useEffect(() => {
-    // Preload images
-    backgroundImages.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
+    // Preload images     // thiss guy  brings  about a stupid effect on my images
+    // backgroundImages.forEach((src) => {
+    //   const img = new Image();
+    //   img.src = src;
+    // });
 
     // Change background image every 5 seconds
     const interval = setInterval(() => {
@@ -27,7 +27,7 @@ const HomePage = ({head = 'Find your Favourite Quotes in Real Time', text = 'Get
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [backgroundIndex]);
 
   return (
     <>
@@ -45,7 +45,7 @@ const HomePage = ({head = 'Find your Favourite Quotes in Real Time', text = 'Get
           <div className=" relative ">
             {/* <Navbar /> */}
             <Navbar/>
-            <Quotes />
+            <Quotes />       
             <ScrollButton />
           </div>
         </section>
